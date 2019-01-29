@@ -98,13 +98,13 @@
     }
   }
 
-  &__card--digital_marketing {
+  &__card--virtual-cto {
     &::after {
       @include gradient-background(brown, goldenrod)
     }
   }
 
-  &__card--web_development {
+  &__card--web-development {
     &::after {
       @include gradient-background(mediumblue, fuchsia);
     }
@@ -114,11 +114,11 @@
     background-color: blue;
   }
 
-  &__card-img--digital_marketing {
+  &__card-img--virtual-cto {
     background-color: brown;
   }
 
-  &__card-img--web_development {
+  &__card-img--web-development {
     background-color: mediumblue;
   }
 }

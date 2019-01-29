@@ -3,7 +3,7 @@
     <div class="auth-inner">
       <main class="auth-content card auth__card shadow--two">
         <section class="auth-section">
-          <h3 class="auth-header">
+          <h4 class="auth-header">
             <RouterLink 
               :to="{ name: 'Login' }"
               class="auth__link auth__link--login"
@@ -15,7 +15,7 @@
             >
               REGISTRATE
             </RouterLink>
-          </h3>
+          </h4>
           <login-form
             :action="'/login'"
             :method="'post'"

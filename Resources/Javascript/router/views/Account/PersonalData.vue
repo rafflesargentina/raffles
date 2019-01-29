@@ -10,14 +10,14 @@
   >
     <div class="row no-gutters">
       <div class="col-sm-4 order-sm-2 mb-2 mb-sm-0">
-        <div class="card account__card">
-          <div class="account__card-cover" />
+        <div class="card account__card shadow--two">
+          <div class="account__card-cover gradient-background--one" />
           <div class="account__card-img">
             <div class="account__card-img-inner">
               <img 
                 v-if="form.avatar"
                 :src="form.avatar.url"
-                class="account__img preview"
+                class="account__img preview shadow--one"
               >
               <div
                 v-if="!form.avatar"
@@ -43,9 +43,9 @@
       </div>
 
       <div class="col-sm-8 mb-2 mb-sm-0 pr-sm-2 pr-md-3">
-        <main class="card">
-          <section>
-            <h4 class="main-header">
+        <main class="account-content card account__card shadow--two">
+          <section class="account-section">
+            <h4 class="main-header account-header">
               Datos Personales
             </h4>
             <div class="row">

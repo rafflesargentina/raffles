@@ -9,44 +9,44 @@
       <nav class="col-lg-6 main-nav d-none d-lg-inline-block">
         <ul class="main-nav__list">
           <li class="main-nav__item main-nav__item--light">
-            <router-link 
-              to="/" 
+            <RouterLink 
+              :to="{ name: 'Home' }" 
               class="main-nav__link main-nav__link--light"
             >
               INICIO
-            </router-link>
+            </RouterLink>
           </li>
           <li class="main-nav__item main-nav__item--light">
-            <router-link 
-              to="/company" 
+            <RouterLink 
+              :to="{ name: 'Company' }"
               class="main-nav__link main-nav__link--light"
             >
               EMPRESA
-            </router-link>
+            </RouterLink>
           </li>
           <li class="main-nav__item main-nav__item--light">
-            <router-link 
-              to="/services" 
+            <RouterLink 
+              :to="{ name: 'ServicesIndex' }"
               class="main-nav__link main-nav__link--light"
             >
               SERVICIOS
-            </router-link>
+            </RouterLink>
           </li>
           <li class="main-nav__item main-nav__item--light">
-            <router-link 
-              to="/portfolio" 
+            <RouterLink 
+              :to="{ name: 'Portfolio' }"
               class="main-nav__link main-nav__link--light"
             >
               PORTFOLIO
-            </router-link>
+            </RouterLink>
           </li>
           <li class="main-nav__item main-nav__item--light">
-            <router-link 
-              to="/contact" 
+            <RouterLink 
+              :to="{ name: 'Contact' }"
               class="main-nav__link main-nav__link--light"
             >
               CONTACTO
-            </router-link>
+            </RouterLink>
           </li>
         </ul>
       </nav>
@@ -57,44 +57,44 @@
       >
         <ul class="main-nav__list">
           <li class="main-nav__item main-nav__item--dark">
-            <router-link
+            <RouterLink
               to="/"
               class="main-nav__link main-nav__link--dark"
             >
               INICIO
-            </router-link>
+            </RouterLink>
           </li>
           <li class="main-nav__item main-nav__item--dark">
-            <router-link
+            <RouterLink
               to="/company"
               class="main-nav__link main-nav__link--dark"
             >
               EMPRESA
-            </router-link>
+            </RouterLink>
           </li>
           <li class="main-nav__item main-nav__item--dark">
-            <router-link
+            <RouterLink
               to="/services"
               class="main-nav__link main-nav__link--dark"
             >
               SERVICIOS
-            </router-link>
+            </RouterLink>
           </li>
           <li class="main-nav__item main-nav__item--dark">
-            <router-link
+            <RouterLink
               to="/portfolio"
               class="main-nav__link main-nav__link--dark"
             >
               PORTFOLIO
-            </router-link>
+            </RouterLink>
           </li>
           <li class="main-nav__item main-nav__item--dark">
-            <router-link
+            <RouterLink
               to="/contact"
               class="main-nav__link main-nav__link--dark"
             >
               CONTACTO
-            </router-link>
+            </RouterLink>
           </li>
         </ul>
       </nav>
@@ -122,23 +122,23 @@
             v-if="!isAuthenticated" 
             class="main-nav__item main-nav__item--light d-none d-lg-inline-block"
           >
-            <router-link 
+            <RouterLink 
               to="/login" 
               class="main-nav__link main-nav__link--light"
             >
               INGRESÁ
-            </router-link>
+            </RouterLink>
           </li>
           <li 
             v-if="!isAuthenticated" 
             class="main-nav__item main-nav__item--light d-none d-lg-inline-block"
           >
-            <router-link 
+            <RouterLink 
               to="/register" 
               class="main-nav__link main-nav__link--light"
             >
               REGISTRATE
-            </router-link>
+            </RouterLink>
           </li>
 
           <li 
@@ -160,19 +160,19 @@
               class="dropdown-menu" 
               aria-labelledby="sessionMenuLink"
             >
-              <router-link 
+              <RouterLink 
                 class="dropdown-item" 
                 to="/account"
               >
                 Cuenta
-              </router-link>
+              </RouterLink>
               <div class="dropdown-divider" />
-              <router-link
+              <RouterLink
                 class="dropdown-item" 
                 to="/logout"
               >
                 Cerrar sesión
-              </router-link>
+              </RouterLink>
             </div>
           </li>
         </ul>

@@ -7,16 +7,16 @@
   &__item {
     min-height: 40rem;
 
-    &-one {
+    &-consulting {
       @include gradient-background(mediumblue, fuchsia);
     }
 
-    &-two {
+    &-virtual-cto {
+      @include gradient-background(mediumblue, fuchsia);
+    }
+
+    &-web-development {
       @include gradient-background(mediumblue, cyan);
-    }
-
-    &-three {
-      @include gradient-background(mediumblue, fuchsia);
     }
   }
 

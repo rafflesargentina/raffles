@@ -7,7 +7,7 @@ import Vue from "vue"
  */
 
 require("./router")
-//require("./store")
+require("./store")
 
 /**
  * The following block of code may be used to automatically register your

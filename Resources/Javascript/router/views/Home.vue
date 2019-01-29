@@ -2,26 +2,25 @@
   <div class="home-page">
     <div 
       id="carousel-one" 
-      class="carousel-one carousel slide" 
+      class="carousel carousel-one slide" 
       data-ride="carousel"
     >
+      <ol class="carousel-indicators">
+        <li
+          v-for="(item, index) in servicesFeatured"
+          :key="index"
+          data-target="#carousel-one"
+          :data-slide-to="index"
+          :class="{ 'active': index === 0 }"
+        />
+      </ol>
       <div class="carousel-inner">
-        <ol class="carousel-indicators">
-          <li 
-            data-target="#carousel-one" 
-            data-slide-to="0" 
-            class="active"
-          />
-          <li 
-            data-target="#carousel-one" 
-            data-slide-to="1"
-          />
-          <li
-            data-target="#carousel-one"
-            data-slide-to="2"
-          />
-        </ol>
-        <section class="carousel-item carousel-one__item-one active">
+        <section
+          v-for="(item, index) in servicesFeatured"
+          :key="index"
+          :class="[{ 'active': index === 0 }, 'carousel-one__item-' + item.slug]"
+          class="carousel-item"
+        >
           <div class="row">
             <div class="col-md-6">
               <div class="carousel-one-header">
@@ -29,27 +28,28 @@
                   Servicios
                 </h4>
                 <h1 class="carousel-one__title display-4">
-                  DESARROLLO WEB
+                  {{ item.name }}
                 </h1>
-                <p class="carousel-one__p">
-                  Realizamos proyectos a medida, ya sea un blog, o un gestor de contenidos, e-commerce, o una aplicación con API con integración en La Nube.
-                </p>
+                <p
+                  class="carousel-one__p"
+                  v-html="item.description"
+                />
                 <div class="row">
                   <div class="col-md-6 col-lg-4">
-                    <router-link 
+                    <RouterLink 
                       :to="{ name: 'WebDevelopment' }" 
                       class="btn btn-lg btn-block btn-outline-light d-none d-md-inline-block"
                     >
                       <span class="fa fa-plus pr-2" />Leer más
-                    </router-link>
+                    </RouterLink>
                   </div>
                   <div class="col-md-6 col-lg-4">
-                    <router-link 
+                    <RouterLink 
                       :to="{ name: 'Contact' }"
                       class="btn btn-lg btn-block btn-outline-light d-none d-md-inline-block"
                     >
                       <span class="fa fa-check pr-2" />Contratar
-                    </router-link>
+                    </RouterLink>
                   </div>
                 </div>
               </div>
@@ -57,89 +57,7 @@
             <div class="col-md-6">
               <img 
                 class="carousel-one__img" 
-                src="/img/web_development.min.svg"
-              >
-            </div>
-          </div>
-        </section>
-        <section class="carousel-item carousel-one__item-two">
-          <div class="row">
-            <div class="col-md-6">
-              <div class="carousel-one-header">
-                <h4 class="carousel-one__subtitle">
-                  Servicios
-                </h4>
-                <h1 class="carousel-one__title display-4">
-                  CONSULTORÍA
-                </h1>
-                <p class="carousel-one__p">
-                  Te asesoramos en la planificación e implementación de tus proyectos. Brindamos soporte técnico en variedad de productos y servicios.
-                </p>
-                <div class="row">
-                  <div class="col-md-6 col-lg-4">
-                    <router-link 
-                      :to="{ name: 'Consulting' }" 
-                      class="btn btn-lg btn-block btn-outline-light d-none d-md-inline-block"
-                    >
-                      <span class="fa fa-plus pr-2" />Leer más
-                    </router-link>
-                  </div>
-                  <div class="col-md-6 col-lg-4">
-                    <router-link 
-                      :to="{ name: 'Contact' }" 
-                      class="btn btn-lg btn-block btn-outline-light d-none d-md-inline-block"
-                    >
-                      <span class="fa fa-check pr-2" />Contratar
-                    </router-link>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <img 
-                class="carousel-one__img" 
-                src="/img/consulting.min.svg"
-              >
-            </div>
-          </div>
-        </section>
-        <section class="carousel-item carousel-one__item-one">
-          <div class="row">
-            <div class="col-md-6">
-              <div class="carousel-one-header">
-                <h4 class="carousel-one__subtitle">
-                  Servicios
-                </h4>
-                <h1 class="carousel-one__title display-4">
-                  CTO Virtual
-                </h1>
-                <p class="carousel-one__p">
-                  Tu aliado y líder tecnológico en La Nube.<br> Ponemos a punto tu Producto Viable Mínimo mediante Tecnología Viable Mínima en un contexto de pago por consumo.
-                </p>
-                <div class="row">
-                  <div class="col-md-6 col-lg-4">
-                    <router-link
-                      :to="{ name: 'VirtualCTO' }"
-                      class="btn btn-lg btn-block btn-outline-light d-none d-md-inline-block"
-                    >
-                      <span class="fa fa-plus pr-2" />Leer más
-                    </router-link>
-                  </div>
-                  <div class="col-md-6 col-lg-4">
-                    <router-link
-                      :to="{ name: 'Contact' }"
-                      class="btn btn-lg btn-block btn-outline-light d-none d-md-inline-block"
-                    >
-                      <span class="fa fa-check pr-2" />Contratar
-                    </router-link>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <img
-                class="carousel-one__img"
-                src="/img/services_consulting.min.svg"
+                :src="item.featured_photo.url"
               >
             </div>
           </div>
@@ -202,118 +120,51 @@
             <div class="services-header">
               <h1>SERVICIOS</h1>
             </div>
-            <div class="row">
-              <div class="col-sm-6 col-md-4 d-flex mb-3">
-                <div class="card services__card services__card--web_development flex-fill shadow--one">
+            <div
+              v-for="chunk in serviceChunks"
+              class="row"
+            >
+              <div
+                v-for="item in chunk"
+                class="col-sm-6 col-md-4 d-flex mb-3"
+              >
+                <div
+                  :class="'services__card--' + item.slug"
+                  class="card services__card flex-fill shadow--one"
+                >
                   <div class="services__card-img pb-0">
                     <div class="services__card-img-inner">
                       <img 
-                        class="services__img services__card-img--web_development shadow--one" 
-                        src="/img/services_web_development.min.svg"
+                        :class="'services__card-img--' + item.slug"
+                        :src="item.featured_photo.url"
+                        class="services__img shadow--one" 
                       >
                     </div>
                   </div>
                   <div class="card-body services__card-body text-center">
                     <h3 class="card-title">
-                      DESARROLLO WEB
+                      {{ item.name }}
                     </h3>
-                    <p class="card__p">
-                      Realizamos proyectos a medida, ya sea un blog, o un gestor de contenidos, e-commerce, o una aplicación con API con integración en La Nube.
-                    </p>
+                    <p
+                      class="card__p"
+                      v-html="item.description"
+                    />
                     <div class="row">
                       <div class="col-lg-6 mb-3">
-                        <router-link 
+                        <RouterLink 
                           :to="{ name: 'WebDevelopment' }" 
                           class="btn btn-lg btn-block btn-outline-light"
                         >
                           <span class="fa fa-plus pr-2" />Leer más
-                        </router-link>
+                        </RouterLink>
                       </div>
                       <div class="col-lg-6 mb-3">
-                        <router-link 
+                        <RouterLink 
                           :to="{ name: 'Contact' }" 
                           class="btn btn-lg btn-block btn-outline-light"
                         >
                           <span class="fa fa-check pr-2" />Contratar
-                        </router-link>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-sm-6 col-md-4 d-flex mb-3">
-                <div class="card services__card services__card--consulting flex-fill shadow--one">
-                  <div class="card-img services__card-img pb-0">
-                    <div class="services__card-img-inner">
-                      <img 
-                        class="services__img services__card-img--consulting shadow--one" 
-                        src="/img/consulting.min.svg"
-                      >
-                    </div>
-                  </div>
-                  <div class="card-body services__card-body text-center">
-                    <h3 class="card-title">
-                      CONSULTORÍA
-                    </h3>
-                    <p class="card__p">
-                      Te asesoramos en la planificación e implementación de tus proyectos. Brindamos soporte técnico en variedad de productos y servicios.
-                    </p>
-                    <div class="row">
-                      <div class="col-lg-6 mb-3">
-                        <router-link 
-                          :to="{ name: 'Consulting' }" 
-                          class="btn btn-lg btn-block btn-outline-light"
-                        >
-                          <span class="fa fa-plus pr-2" />Leer más
-                        </router-link>
-                      </div>
-                      <div class="col-lg-6 mb-3">
-                        <router-link 
-                          :to="{ name: 'Consulting' }"
-                          class="btn btn-lg btn-block btn-outline-light"
-                        >
-                          <span class="fa fa-check pr-2" />Contratar
-                        </router-link>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-sm-6 col-md-4 mb-3 d-flex">
-                <div class="card services__card services__card--web_development flex-fill shadow--one">
-                  <div class="card-img services__card-img pb-0">
-                    <div class="services__card-img-inner">
-                      <img
-                        class="services__img services__card-img--web_development shadow--one"
-                        src="/img/services_consulting.min.svg"
-                      >
-                    </div>
-                  </div>
-                  <div class="card-body services__card-body text-center">
-                    <h3 class="card-title">
-                      CTO VIRTUAL
-                    </h3>
-                    <p class="card__p">
-                      Tu aliado y líder tecnológico en La Nube.<br> Ponemos a punto tu Producto Viable Mínimo mediante Tecnología Viable Mínima en un contexto de pago por consumo.
-                    </p>
-                    <div class="row">
-                      <div class="col-lg-6 mb-3">
-                        <router-link
-                          :to="{ name: 'VirtualCTO' }"
-                          class="btn btn-lg btn-block btn-outline-light"
-                        >
-                          <span class="fa fa-plus pr-2" />Leer más
-                        </router-link>
-                      </div>
-                      <div class="col-lg-6 mb-3">
-                        <router-link
-                          :to="{ name: 'Contact' }"
-                          class="btn btn-lg btn-block btn-outline-light"
-                        >
-                          <span class="fa fa-check pr-2" />Contratar
-                        </router-link>
+                        </RouterLink>
                       </div>
                     </div>
                   </div>
@@ -394,3 +245,44 @@
     </div>
   </div>
 </template>
+
+<script>
+import { chunk } from "lodash"
+import { servicesComputed, servicesMethods } from "../../store/helpers"
+
+export default {
+    data() {
+        return {
+            prepared: false
+        }
+    },
+
+    computed: {
+        ...servicesComputed,
+
+        serviceChunks() {
+            return chunk(this.allServices, 3)
+        }
+    },
+
+    watch: {
+        "$route" (value) {
+            if (value.name === "Home" && this.prepared === false) {
+                return this.prepare()
+            }
+        }
+    },
+
+    created() {
+        return this.prepare()
+    },
+
+    methods: {
+        ...servicesMethods,
+
+        prepare() {
+            return this.fetchAllServices().then(()=> this.prepared = true)
+        }
+    },
+}
+</script>

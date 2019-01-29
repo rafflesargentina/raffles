@@ -1,5 +1,9 @@
 
 .account {
+  .legal {
+    color: rgba(white,0.9);
+  }
+
   &__card-body {
     z-index: 2;
     line-height: 1.2;
@@ -41,6 +45,11 @@
     height: 100%;
   }
 
+  &-header {
+    color: mediumblue;
+    margin-bottom: 5%;
+  }
+
   &__img {
     width: 100%;
     position: relative;
@@ -61,6 +70,15 @@
         transform: translateX(0);
         margin-left: 20%;
       }
+    }
+
+    &__card {
+      border-radius: $border-radius;
+    }
+
+    &__card-cover {
+      border-top-left-radius: 1rem;
+      border-top-right-radius: 1rem;
     }
   }
 }

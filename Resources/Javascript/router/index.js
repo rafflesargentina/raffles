@@ -104,8 +104,8 @@ router.addRoutes(
             path: "/register"
         },
         {
-            component: require("./views/Services.vue"),
-            name: "Services",
+            component: require("./views/Services/Index.vue"),
+            name: "ServicesIndex",
             path: "/services"
         },
         {
