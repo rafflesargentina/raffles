@@ -1,0 +1,21 @@
+.vue-tags {
+  &-input {
+    border-radius: 1rem;
+    max-width: 100% !important; 
+
+    .input {
+      border: none !important;
+      border-radius: 1rem;
+      padding: 0.25rem!important;
+    }
+
+    .new-tag-input-wrapper{
+      margin: 0 0.25rem!important;
+    }
+
+    .tag {
+      margin: 0 0.25rem!important;
+      padding: 0.25rem 0.5rem!important;
+    }
+  }
+}

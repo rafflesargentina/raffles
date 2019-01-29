@@ -1,0 +1,41 @@
+
+body {
+  background-color: $table-head-bg;
+}
+
+html {
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi) {
+
+    html {
+      -moz-osx-font-smoothing: auto;
+    }
+}
+
+label {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+main,
+section {
+  padding: 1rem;
+}
+
+.fa {
+  line-height: inherit;
+}
+
+.full-height {
+  min-height: calc(100vh - #{$header-height});
+}
+
+@include media-breakpoint-up(sm) {
+  main,
+  section {
+    padding: 3%;
+  }
+}

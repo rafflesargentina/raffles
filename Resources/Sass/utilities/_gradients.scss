@@ -1,0 +1,20 @@
+
+.gradient-border--one {
+  @include gradient-border($border-width, mediumblue, fuchsia);
+}
+
+.gradient-border--two {
+  @include gradient-border($border-width, mediumblue, cyan);
+}
+
+.gradient-background--one {
+  @include gradient-background(mediumblue, fuchsia);
+}
+
+.gradient-background--two {
+  @include gradient-background(mediumblue, cyan);
+}
+
+.gradient-background--three {
+  @include gradient-background(brown, goldenrod);
+}
