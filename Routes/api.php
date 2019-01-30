@@ -13,8 +13,4 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get(
-    '/', function (Request $request) {
-        // return $request->raffles2018();
-    }
-)->middleware('auth:api');
+Route::apiResource('services', 'ServiceController');
